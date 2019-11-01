@@ -1,7 +1,7 @@
 # Searilie
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/fossapps/Searilie.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/fossapps/Searilie.svg)](https://travis-ci.org/fossapps/Searilie)
+[![Build Status](https://travis-ci.com/fossapps/searilie.svg)](https://travis-ci.com/fossapps/searilie)
 [![GitHub issues](https://img.shields.io/github/issues/fossapps/Searilie.svg)](https://github.com/fossapps/Searilie/issues)
 [![codecov](https://codecov.io/gh/fossapps/Searilie/branch/master/graph/badge.svg)](https://codecov.io/gh/fossapps/Searilie)
 [![devDependencies Status](https://david-dm.org/fossapps/Searilie/dev-status.svg)](https://david-dm.org/fossapps/Searilie?type=dev)
