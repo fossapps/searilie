@@ -1,4 +1,4 @@
-import {HEADER_SEPARATOR, INTEGER_IDENTIFIER} from "./constants";
+import {HEADER_SEPARATOR, INTEGER_IDENTIFIER, PAYLOAD_SEPARATOR} from "./constants";
 
 export interface IObject {
     [key: string]: number | string;
@@ -42,7 +42,7 @@ export class Searilie {
     public encodeWithHeaders(object: IObject[]): string {
         const headers = this.getHeaders(object);
         const encodedData = this.adapter.serialize(object);
-        return `${this.adapter.getIdentifier()}${headers}:${encodedData}`;
+        return `${this.adapter.getIdentifier()}${headers}${PAYLOAD_SEPARATOR}${encodedData}`;
     }
 
     public getSchemaFromHeaders(text: string): ISchema {
