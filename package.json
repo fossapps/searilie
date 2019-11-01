@@ -1,5 +1,5 @@
 {
-  "name": "searialie",
+  "name": "searilie",
   "description": "",
   "main": "./lib/index.js",
   "typings": "./lib/index",
@@ -10,9 +10,9 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fossapps/searialie.git"
+    "url": "https://github.com/fossapps/searilie.git"
   },
-  "homepage": "https://github.com/fossapps/searialie",
+  "homepage": "https://github.com/fossapps/searilie",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.0",
