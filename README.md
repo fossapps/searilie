@@ -1,11 +1,11 @@
 # Searilie
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/fossapps/Searilie.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/fossapps/searilie.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.com/fossapps/searilie.svg)](https://travis-ci.com/fossapps/searilie)
-[![GitHub issues](https://img.shields.io/github/issues/fossapps/Searilie.svg)](https://github.com/fossapps/Searilie/issues)
-[![codecov](https://codecov.io/gh/fossapps/Searilie/branch/master/graph/badge.svg)](https://codecov.io/gh/fossapps/Searilie)
-[![devDependencies Status](https://david-dm.org/fossapps/Searilie/dev-status.svg)](https://david-dm.org/fossapps/Searilie?type=dev)
-[![dependencies Status](https://david-dm.org/fossapps/Searilie/status.svg)](https://david-dm.org/fossapps/Searilie)
+[![GitHub issues](https://img.shields.io/github/issues/fossapps/searilie.svg)](https://github.com/fossapps/searilie/issues)
+[![codecov](https://codecov.io/gh/fossapps/searilie/branch/master/graph/badge.svg)](https://codecov.io/gh/fossapps/searilie)
+[![devDependencies Status](https://david-dm.org/fossapps/searilie/dev-status.svg)](https://david-dm.org/fossapps/searilie?type=dev)
+[![dependencies Status](https://david-dm.org/fossapps/searilie/status.svg)](https://david-dm.org/fossapps/searilie)
 
 This library tries to encode data to a very small payload, useful when you want to add data to url query parameters
 
