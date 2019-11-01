@@ -38,7 +38,6 @@ describe("Searilie", () => {
     describe("decode using headers", () => {
         it("should throw error if wrong adapter", () => {
             const adapter: IAdapter = {
-                deserialize: jest.fn(() => [{a: 2}]),
                 getIdentifier: jest.fn(() => "Z")
             } as any;
             const serializer = new Searilie(adapter);
