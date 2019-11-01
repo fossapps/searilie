@@ -6,6 +6,7 @@
 [![codecov](https://codecov.io/gh/fossapps/searilie/branch/master/graph/badge.svg)](https://codecov.io/gh/fossapps/searilie)
 [![devDependencies Status](https://david-dm.org/fossapps/searilie/dev-status.svg)](https://david-dm.org/fossapps/searilie?type=dev)
 [![dependencies Status](https://david-dm.org/fossapps/searilie/status.svg)](https://david-dm.org/fossapps/searilie)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/searilie)](https://bundlephobia.com/result?p=searilie)
 
 This library tries to encode data to a very small payload, useful when you want to add data to url query parameters
 
