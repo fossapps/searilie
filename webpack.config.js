@@ -1,11 +1,14 @@
 module.exports = {
     /** Build from built js file */
     entry: {
-      typestyle: './lib/index.js',
+      searialie_all: './lib/index.js',
+      searialie: './lib/Searilie.js',
+      tinyAdapter: './lib/adapters/TinyCompressor.js',
+      CsvAdapter: './lib/adapters/CSVCompressor.js',
     },
     output: {
-        filename: './umd/index.js',
+        filename: './umd/[name].js',
         libraryTarget: 'umd',
-        library: 'myModule'
+        library: 'searilie'
     }
 };
