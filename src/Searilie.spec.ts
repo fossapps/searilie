@@ -36,12 +36,22 @@ describe("Searilie", () => {
         });
     });
     describe("decode using headers", () => {
-        const adapter: IAdapter = {
-            deserialize: jest.fn(() => [{a: 2}]),
-            getIdentifier: jest.fn(() => "A")
-        } as any;
-        const serializer = new Searilie(adapter);
-        expect(serializer.decodeUsingHeaders(`Aa,${INTEGER_IDENTIFIER}b:h2`)).toStrictEqual([{a: 2}]);
+        it("should throw error if wrong adapter", () => {
+            const adapter: IAdapter = {
+                deserialize: jest.fn(() => [{a: 2}]),
+                getIdentifier: jest.fn(() => "Z")
+            } as any;
+            const serializer = new Searilie(adapter);
+            expect(() => serializer.decodeUsingHeaders(`Aa,${INTEGER_IDENTIFIER}b:h2`)).toThrow("adapter mismatched");
+        });
+        it("should be able to decode properly", () => {
+            const adapter: IAdapter = {
+                deserialize: jest.fn(() => [{a: 2}]),
+                getIdentifier: jest.fn(() => "A")
+            } as any;
+            const serializer = new Searilie(adapter);
+            expect(serializer.decodeUsingHeaders(`Aa,${INTEGER_IDENTIFIER}b:h2`)).toStrictEqual([{a: 2}]);
+        });
     });
     describe("decode and encode with headers", () => {
         it("should decode and encode properly", () => {
