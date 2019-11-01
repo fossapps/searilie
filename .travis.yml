@@ -1,7 +1,7 @@
 dist: trusty
 language: node_js
 node_js:
-- "10"
+- "12"
 
 cache:
   directories:
@@ -22,4 +22,4 @@ after_script: greenkeeper-lockfile-upload
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  #- npm run semantic-release
+  - npx semantic-release

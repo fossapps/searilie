@@ -1,5 +1,5 @@
 {
-  "name": "@crazy-factory/ts-module-boilerplate",
+  "name": "searialie",
   "description": "",
   "main": "./lib/index.js",
   "typings": "./lib/index",
@@ -10,9 +10,9 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/crazyfactory/ts-module-boilerplate.git"
+    "url": "https://github.com/fossapps/searialie.git"
   },
-  "homepage": "https://github.com/crazyfactory/ts-module-boilerplate",
+  "homepage": "https://github.com/fossapps/searialie",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.0",
@@ -20,7 +20,6 @@
     "del-cli": "^3.0.0",
     "husky": "^2.0.0",
     "jest": "^23.6.0",
-    "semantic-release": "^11.0.2",
     "ts-jest": "^24.0.0",
     "tslint": "^5.11.0",
     "tslint-microsoft-contrib": "^5.2.1",
@@ -36,8 +35,7 @@
     "build": "npm run clean && tsc -p . && tsc -p tsconfig.es2015.json && webpack",
     "clean": "del-cli ./lib ./lib.es2015 ./coverage ./umd/**/*.js",
     "lint": "tslint -t stylish --project tsconfig.json './src/**/*.ts'",
-    "lint:fix": "npm run lint -s -- --fix",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "lint:fix": "npm run lint -s -- --fix"
   },
   "jest": {
     "transform": {
