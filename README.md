@@ -36,7 +36,7 @@ const serialization = new Searilie(new CSVCompressor());
 console.log(serialization.encode([{a: "kick", b: 51}, {a: "cat", b: 92}])); // Bkick,51;cat,92
 ```
 
-## deserialization
+## Deserialization
 the first character on encoded payload denotes which compressor was used, we need to use the same compressor to ensure we don't load everything at once, we don't import everything and check it for you.
 ```typescript
 import {Searilie, ValueType} from "./src/Searilie"
@@ -44,4 +44,15 @@ import {CSVCompressor} from "./src/adapters/CSVCompressor";
 const serialization = new Searilie(new CSVCompressor());
 console.log(serialization.decode("Bkick,51;cat,92", {a: ValueType.String, b: ValueType.Number})); // [{a: "kick", b: 51}, {a: "cat", b: 92}]
 console.log(serialization.decode("Bkick,51;cat,92", {myKey: ValueType.String, newKey: ValueType.Number})); // [{myKey: "kick", newKey: 51}, {myKey: "cat", newKey: 92}]
+```
+
+## With headers
+by trading off some character spaces, we can also encode data with keys so we don't need to provide schema while decoding
+
+```typescript
+import {Searilie} from "./src/Searilie"
+import {CSVCompressor} from "./src/adapters/CSVCompressor"; 
+const serialization = new Searilie(new CSVCompressor());
+console.log(serialization.encodeWithHeaders([{a: "kick", b: 51}, {a: "cat", b: 92}])); // Ba,|b:kick,51;cat,92
+console.log(serialization.decodeUsingHeaders("Ba,|b:kick,51;cat,92")); // [{a: "kick", b: 51}, {a: "cat", b: 92}]
 ```
