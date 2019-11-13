@@ -1,8 +1,8 @@
 # tools
 .vscode/
-.idea/
+.idea/*
 
-!.idea/runConfigurations/*
+!.idea/runConfigurations/
 # builds
 lib/
 lib.es2015/
