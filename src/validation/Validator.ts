@@ -2,12 +2,12 @@ import {IObject} from "../Searilie";
 
 const yes = () => true;
 
-type TValueValidator = (value: string | number) => boolean;
+type TValueValidator = (value: string | number, key: string) => boolean;
 // tslint:disable-next-line:no-unnecessary-class
 export class Validator {
     public static isSupported(object: IObject, valueValidator: TValueValidator = yes): boolean {
         return Object.keys(object).every((x) => {
-            return (typeof object[x] === "string" || typeof object[x] === "number") && valueValidator(object[x]);
+            return (typeof object[x] === "string" || typeof object[x] === "number") && valueValidator(object[x], x);
         });
     }
     public static validateArray(object: IObject[], valueValidator?: TValueValidator): boolean {
