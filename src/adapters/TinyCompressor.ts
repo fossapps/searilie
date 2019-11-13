@@ -1,19 +1,14 @@
 import {IAdapter, IObject, ISchema, TIdentifier, ValueType} from "../Searilie";
+import {chunkText} from "../utils/ChunkText";
 import {Validator} from "../validation/Validator";
 
 export class TinyCompressor implements IAdapter {
-
     private static isValid(object: IObject[]): boolean {
         return Validator.validateArray(object, (value) => value.toString().length === 1);
     }
 
     private static encodeObject(obj: IObject): string {
         return Object.keys(obj).sort().map((x) => obj[x]).join("");
-    }
-
-    private static chunkText(text: string, length: number): string[] {
-        const regexChunk = new RegExp(`.{1,${length}}`, "g");
-        return text.match(regexChunk)!;
     }
 
     private static parseText(text: string, schema: ISchema): IObject {
@@ -33,7 +28,7 @@ export class TinyCompressor implements IAdapter {
         if (text.length % numOfKeysInSchema !== 0) {
             throw new Error("invalid text");
         }
-        const parts = TinyCompressor.chunkText(text, numOfKeysInSchema);
+        const parts = chunkText(text, numOfKeysInSchema);
         return parts.map((part) => TinyCompressor.parseText(part, schema));
     }
 
