@@ -13,6 +13,20 @@ export class TinyNumberCompressor implements IAdapter {
         return (36 ** numOfChars) - 1;
     }
 
+    public static leftPad(text: string, targetLength: number, padString: string = ""): string {
+        // tslint:disable-next-line:no-bitwise
+        targetLength = targetLength >> 0; // truncate if number, or convert non-number to 0;
+        if (this.length >= targetLength) {
+            return String(text);
+        } else {
+            targetLength = targetLength - text.length;
+            if (targetLength > padString.length) {
+                padString += padString.repeat(targetLength / padString.length); // append to original to ensure we are longer than needed
+            }
+            return padString.slice(0, targetLength) + String(text);
+        }
+    }
+
     public deserialize(text: string, schema: ISchema): IObject[] {
         const charLengthForSchema = this.getCharLengthForSchema(schema);
         if (text.length % charLengthForSchema !== 0) {
@@ -44,7 +58,8 @@ export class TinyNumberCompressor implements IAdapter {
     private encodeObject(object: IObject): string {
         return Object.keys(object).sort().map((x) => {
             const length = this.keyLengthFactory(x);
-            return (object[x] as number).toString(36).padStart(length, "0");
+            const str = (object[x] as number).toString(36);
+            return TinyNumberCompressor.leftPad(str, length, "0");
         }).join("");
     }
 
