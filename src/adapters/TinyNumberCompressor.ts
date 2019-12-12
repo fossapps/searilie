@@ -13,7 +13,7 @@ export class TinyNumberCompressor implements IAdapter {
         return (36 ** numOfChars) - 1;
     }
 
-    private static leftStart(text: string, targetLength: number, padString: string = ""): string {
+    public static leftPad(text: string, targetLength: number, padString: string = ""): string {
         // tslint:disable-next-line:no-bitwise
         targetLength = targetLength >> 0; // truncate if number, or convert non-number to 0;
         if (this.length >= targetLength) {
@@ -59,7 +59,7 @@ export class TinyNumberCompressor implements IAdapter {
         return Object.keys(object).sort().map((x) => {
             const length = this.keyLengthFactory(x);
             const str = (object[x] as number).toString(36);
-            return TinyNumberCompressor.leftStart(str, length, "0");
+            return TinyNumberCompressor.leftPad(str, length, "0");
         }).join("");
     }
 
