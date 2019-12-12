@@ -2,6 +2,10 @@ import {ValueType} from "../Searilie";
 import {TinyNumberCompressor} from "./TinyNumberCompressor";
 
 describe("TinyNumberCompressor", () => {
+    it("PadStart should work ", () => {
+        expect(TinyNumberCompressor.leftPad("0", 3, "a")).toBe("aa0");
+    });
+
     it("should be defined", () => {
         expect(TinyNumberCompressor).toBeDefined();
     });
